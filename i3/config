@@ -136,9 +136,6 @@ workspace 3 output eDP-1
 workspace 4 output eDP-1
 
 
-#assign [class="Terminator"] 1
-
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -189,8 +186,9 @@ for_window [window_role="Msgcompose"] floating enable, border normal
 
 
 #lockscreen
-bindsym Control+$mod+l exec i3lock -t -i ~/dotfiles/imgs/lockscreens/2.png
-
+#TODO faze funcionar esse script
+#bindsym Control+$mod+l exec ~/dotfiles/scripts/i3/xaxalock
+bindsym Ctrl+$mod+l exec i3lock -t -i ~/dotfiles/imgs/lockscreens/2.png
 
 
 #STARTUP
@@ -201,7 +199,7 @@ exec clipit
 exec i3-msg 'workspace number 3; exec google-chrome; workspace number 1'
 exec i3-msg 'workspace number 1; exec terminator; workspace number 1' 
 exec i3-msg 'workspace number 2; exec subl; workspace number 1'
-exec xautolock -time 1 -locker "~/dotfiles/scripts/i3/xaxalock"
+exec xautolock -time 1 -locker ~/dotfiles/scripts/i3/xaxalock
 
 # Specific desktops for some windows
 assign [class="Terminator"]	$tag1
