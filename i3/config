@@ -136,7 +136,7 @@ workspace 3 output eDP-1
 workspace 4 output eDP-1
 
 
-assign [class="Terminator"] 1
+#assign [class="Terminator"] 1
 
 
 # reload the configuration file
@@ -180,3 +180,29 @@ bar {
 
 # move the whole workspace to the next output
 bindsym $mod+x move workspace to output right
+
+
+# Popups and dialogs should float
+for_window [window_role="(?i)pop-up"] floating enable, border normal
+for_window [window_role="conversation"] floating enable, border normal
+for_window [window_role="Msgcompose"] floating enable, border normal
+
+
+#lockscreen
+bindsym Control+$mod+l exec i3lock -t -i ~/dotfiles/imgs/lockscreens/2.png
+
+
+
+#STARTUP
+
+# TODO this xrandx is for a computer only
+exec xrandr --output eDP-1 --right-of HDMI-1
+exec clipit
+exec i3-msg 'workspace number 3; exec google-chrome; workspace number 1'
+exec i3-msg 'workspace number 1; exec terminator; workspace number 1' 
+exec i3-msg 'workspace number 2; exec subl; workspace number 1'
+exec xautolock -time 1 -locker "~/dotfiles/scripts/i3/xaxalock"
+
+# Specific desktops for some windows
+assign [class="Terminator"]	$tag1
+assign [class="Sublime_text"]	$tag2
