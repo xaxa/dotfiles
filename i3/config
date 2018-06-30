@@ -186,8 +186,8 @@ for_window [window_role="Msgcompose"] floating enable, border normal
 
 
 #lockscreen
-bindsym Control+$mod+l exec ~/dotfiles/scripts/i3/xaxalock
-#bindsym Ctrl+$mod+l exec i3lock -t -i ~/dotfiles/imgs/lockscreens/2.png
+bindsym Control+$mod+l exec ~/.dotfiles/scripts/i3/xaxalock
+#bindsym Ctrl+$mod+l exec i3lock -t -i ~/.dotfiles/imgs/lockscreens/2.png
 
 
 #STARTUP
@@ -198,7 +198,7 @@ exec clipit
 exec i3-msg 'workspace number 3; exec google-chrome; workspace number 1'
 exec i3-msg 'workspace number 1; exec terminator; workspace number 1' 
 exec i3-msg 'workspace number 2; exec subl; workspace number 1'
-exec xautolock -time 10 -locker ~/dotfiles/scripts/i3/xaxalock
+exec xautolock -time 10 -locker ~/.dotfiles/scripts/i3/xaxalock
 
 # Specific desktops for some windows
 assign [class="Terminator"]	$tag1
