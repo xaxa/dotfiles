@@ -199,6 +199,7 @@ exec i3-msg 'workspace number 3; exec google-chrome; workspace number 1'
 exec i3-msg 'workspace number 1; exec terminator; workspace number 1' 
 exec i3-msg 'workspace number 2; exec subl; workspace number 1'
 exec xautolock -time 10 -locker ~/.dotfiles/scripts/i3/xaxalock
+exec ~/.config/i3/config.local
 
 # Specific desktops for some windows
 assign [class="Terminator"]	$tag1
