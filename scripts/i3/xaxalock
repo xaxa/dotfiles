@@ -1,2 +1,2 @@
 #!/bin/bash
-i3lock -t -i $(find ~/dotfiles/imgs/lockscreens -name "*.png" | shuf -n1)
+i3lock -t -i $(find ~/.dotfiles/imgs/lockscreens -name "*.png" | shuf -n1)
