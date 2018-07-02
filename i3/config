@@ -35,8 +35,14 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
+
+#PROGRAM LAUNCHER
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
+#start rofi
+bindsym $mod+d exec rofi -show drun
+
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -183,7 +189,7 @@ bindsym $mod+x move workspace to output right
 for_window [window_role="(?i)pop-up"] floating enable, border normal
 for_window [window_role="conversation"] floating enable, border normal
 for_window [window_role="Msgcompose"] floating enable, border normal
-
+for_window [class="Gnome-software"] floating enable, border normal
 
 #lockscreen
 bindsym Control+$mod+l exec ~/dotfiles/scripts/i3/xaxalock
@@ -194,6 +200,10 @@ bindsym Control+$mod+l exec ~/dotfiles/scripts/i3/xaxalock
 
 # TODO this xrandx is for a computer only
 exec xrandr --output eDP-1 --right-of HDMI-1
+
+
+
+
 exec clipit
 exec i3-msg 'workspace number 3; exec google-chrome; workspace number 1'
 exec i3-msg 'workspace number 1; exec terminator; workspace number 1' 
@@ -203,3 +213,4 @@ exec xautolock -time 10 -locker ~/dotfiles/scripts/i3/xaxalock
 # Specific desktops for some windows
 assign [class="Terminator"]	$tag1
 assign [class="Sublime_text"]	$tag2
+assign [class="jetbrains-pycharm-ce"] $tag2
