@@ -13,6 +13,9 @@ if [ -d "$DOTFILES_DIRECTORY" ]; then
 	#zsh
 	sudo apt -y install zsh
 	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+	
+	#zsh auto suggestions
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 	#mv ~/.tmux.conf ~/.tmux.conf_old
 	ln -s $DOTFILES_DIRECTORY/.tmux.conf ~/.tmux.conf
