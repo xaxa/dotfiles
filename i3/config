@@ -199,6 +199,7 @@ bindsym Control+$mod+l exec ~/.dotfiles/scripts/i3/xaxalock
 #STARTUP
 
 # TODO this xrandx is for a computer only
+exec xrandr --auto
 exec xrandr --output eDP-1 --right-of HDMI-1
 
 
