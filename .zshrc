@@ -96,3 +96,25 @@ source $ZSH/oh-my-zsh.sh
 eval "$(fasd --init auto)"
 
 source $HOME/.zshrc.local
+
+function_eva_ip() {
+  stage=$1
+  ip=$(dig @resolver1.opendns.com myip.opendns.com +short -4)
+  message="@eva $stage vxavier $ip"
+  # echo $message | (pbcopy || ( xclip && xclip -sel clip) )
+  print $message
+}
+alias eva_ip_stg='function_eva_ip stg'
+alias eva_ip_prod='function_eva_ip prod'
+
+export FWD_USER='vxavier'
+export FWD_SERVER='34.200.32.139'
+export FWD_RSA=`cat ~/.ssh/id_rsa`
+export DOCKERHOST=$(ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d: | head -n1)
+
+export DOCKER_GITHUB_TOKEN='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'
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=/usr/local/go/bin
+alias minica="/home/xaxa/go/bin/minica"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
